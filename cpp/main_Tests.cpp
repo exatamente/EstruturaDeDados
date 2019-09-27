@@ -1,4 +1,5 @@
 #include <iostream>
+#include ".\..\headers\Stock.h"
 #include ".\..\headers\IStock.h"
 
 
