@@ -1,5 +1,9 @@
 #include ".\..\headers\Stock.h"
 
+#include <string>
+#include <iostream>
+
+
 /* Constructor */
 Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 {
@@ -7,11 +11,6 @@ Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 	// s = estrutura utilizada para armazenar;
 	switch (s)
 	{
-		case Hash:
-			std::cout << "Hash" << std::endl;
-			// instanciar aqui
-			// exemplo de como sera a instancia: inStock = new Hash(cap);
-			break;
 		case List:
 			std::cout << "List" << std::endl;
 			// instanciar aqui
@@ -34,11 +33,19 @@ Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 	price = 0;
 }
 
+Stock::Stock()
+{
+	name = "invalid";
+	cap = -1;
+	qtt = -1;
+	price = -1;
+}
 
 /* Destructor */
 Stock::~Stock()
 {
-	delete inStock;
+	std::cout << "destruindo o estoque: " << name << std::endl;
+	//delete inStock;
 }
 
 /* Getters */
