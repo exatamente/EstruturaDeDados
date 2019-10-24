@@ -1,7 +1,10 @@
 #pragma once
+#include <string>
+#include <iostream>
 #include "./IStock.h"
 #include "./IStructure.h"
 #include "./Product.h"
+#include "./Stack.h"
 
 class Stock : IStock
 {
@@ -9,10 +12,10 @@ public:
 	/* Atributes */
 	enum Structure : unsigned char // enum eh um data type e nao um data structure, entao suponho que estamos liberados para utilizar
 	{
-		List, Stack, Tree // pode adicionar qualquer nome
+		StructureQueue, StructureStack // pode adicionar qualquer nome
 	};
+	IStructure* inStock; // estrutura que vai guardar os produtos
 private:
-	//IStructure* inStock; // estrutura que vai guardar os produtos
 	int cap; // capacidade do estoque (tamanho maximo)
 	std::string name;
 	float price; // preco do estoque inteiro

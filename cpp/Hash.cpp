@@ -17,7 +17,6 @@ Hash::~Hash()
 void Hash::Add(std::string key, Stock* value)
 {
 	int idx = HashFunction(key, size);
-	//hashTable[idx] = new LDDE<TVal>;
 	hashTable[idx].Insere(value);
 }
 

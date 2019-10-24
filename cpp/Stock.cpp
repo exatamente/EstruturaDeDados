@@ -1,9 +1,5 @@
 #include ".\..\headers\Stock.h"
 
-#include <string>
-#include <iostream>
-
-
 /* Constructor */
 Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 {
@@ -11,17 +7,13 @@ Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 	// s = estrutura utilizada para armazenar;
 	switch (s)
 	{
-		case List:
-			std::cout << "List" << std::endl;
+		case StructureQueue:
+			//std::cout << "queue" << std::endl;
 			// instanciar aqui
 			break;
-		case Stack:
-			std::cout << "Stack" << std::endl;
-			// instanciar aqui
-			break;
-		case Tree:
-			std::cout << "Tree" << std::endl;
-			// instanciar aqui
+		case StructureStack:
+			//std::cout << "Stack" << std::endl;
+			inStock = new Stack;
 			break;
 		default:
 			std::cout << "Internal error during instanciation... invalid structure" << std::endl;
