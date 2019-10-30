@@ -12,7 +12,6 @@ public:
 	/* obligatory setters */
 	virtual bool setCap(int) = 0;
 	virtual bool setPrice(float) = 0; // ajusta o preço (verificar se nao e negativo)
-	virtual bool setQtt(int) = 0; // ajusta quantidade no lote (nao pode ficar negativa)
 	/* virtual destructor */
 	virtual ~IStock() {};
 };

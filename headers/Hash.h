@@ -18,8 +18,9 @@ public:
 	int HashFunction(std::string, int);
 	//void Print();
 
-	void Add(std::string, Stock*);
+	void Add(Stock&);
 	Stock& Get(std::string);
+	void Print();
 	bool Remove(std::string);
 };
 

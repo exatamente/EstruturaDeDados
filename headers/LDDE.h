@@ -40,6 +40,7 @@ public:
 	Stock& Get(std::string);
 
 	bool Remove(int);
+	void Print();
 
 	const Stock& operator[] (int idx)
 	{

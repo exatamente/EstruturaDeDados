@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include <iomanip>
 #include "IStructure.h"
 #include "NoProduto.h"
 
@@ -9,40 +11,10 @@ private:
 	int n;
 
 public:
-	Stack()
-	{
-		topo = NULL;
-		n = 0;
-	}
-
-
-	bool Add(Product* valor)
-	{
-		NoProduto* novo = new NoProduto;
-		Stack* p = new Stack;
-
-		novo->valor = valor;
-		novo->prox = NULL;
-
-		p->topo = novo;
-
-
-		n++;
-		return true;
-		delete novo;
-		delete p;
-	}
-
-	Product Remove(bool *ok = NULL)
-	{
-		NoProduto* novo = new NoProduto;
-		Stack* p = new Stack;
-		novo->prox = NULL;
-
-		n--;
-		return *(p->topo->valor);
-		delete novo;
-		delete p;
-	}
-
+	Stack();
+	bool Add(Product* valor) override;
+	int InStock() override;
+	Product Remove(bool *ok = NULL) override;
+	bool Contain(unsigned int id) override;
+	void Print() override;
 };

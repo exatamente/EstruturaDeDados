@@ -11,30 +11,30 @@ int main()
 {
 
 	Hash estoques(10);
-	
 
-	Stock peixe(Stock::StructureStack, "stockpeixe", 50); // Estoque de "peixes" utilizando Arvore com capacidade para 50 unidades
-	estoques.Add(peixe.getName(), &peixe);
-	std::cout << estoques.Contain("stockpeixe") << std::endl;
+	Stock peixe(Stock::StructureStack, "Pescados", 50); // Estoque de "peixes" utilizando Arvore com capacidade para 50 unidades
+	estoques.Add(peixe); // adicionando o estoque de peixes com o nome de "Peixes"
+	std::cout << estoques.Contain("Pescados") << std::endl;
 	
-	Stock paes(Stock::StructureStack, "stockpaes", 1000);
-	estoques.Add(paes.getName(), &paes);
-	std::cout << estoques.Contain("stockpaes") << std::endl;
+	Stock paes(Stock::StructureQueue, "Padaria", 1000);
+	estoques.Add(paes);
+	std::cout << estoques.Contain("Padaria") << std::endl;
 
-	Stock carnes(Stock::StructureStack, "stockcarnes", 500);
-	estoques.Add(carnes.getName(), &carnes);
+	Stock carnes(Stock::StructureStack, "Acougue", 500);
+	estoques.Add(carnes);
 	
 	//estoques.Remove("Peixes");
-	Stock x = estoques.Get("stockpeixe");
-	std::cout << x.getName() << std::endl;
-	x = estoques.Get("stockpaes");
-	std::cout << x.getName() << std::endl;
-	x = estoques.Get("stockcarnes");
-	std::cout << x.getName() << std::endl;
+	Stock x = estoques.Get("Pescados");
+	x.Print();
+	std::cout << x.getName() << std::endl << std::endl;
+	Stock y = estoques.Get("Padaria");
+	y.Add(new Product("brioche", 5.30, 1));
+	y.Print();
+	std::cout << y.getName() << std::endl << std::endl;
+	Stock z = estoques.Get("Acougue");
+	std::cout << z.getName() << std::endl << std::endl;
 
-	//h.Add("genericos", &coisas);
-
-
+	estoques.Print();
 
 	system("pause");
 	return 0;

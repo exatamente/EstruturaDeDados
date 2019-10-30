@@ -51,7 +51,7 @@ int LDDE::Busca(std::string key)
 	No* current = first;
 	for (int i = 0; i < n && current; i++)
 	{
-		if (current->stock->getName().compare(key))
+		if (!current->stock->getName().compare(key))
 		{
 			return i;
 		}
@@ -65,12 +65,14 @@ Stock& LDDE::Get(std::string key)
 	No* current = first;
 	for (int i = 0; i < n && current; i++)
 	{
-		if (current->stock->getName().compare(key))
+		if (!current->stock->getName().compare(key)) // compare retorna 0 (false) se forem iguais
 		{
+			std::cout << current->stock->getName() << " - " << key << std::endl;
 			return *(current->stock);
 		}
 		current = current->next;
 	}
+	std::cout << "nao encontrou..." << std::endl;
 	return sentinela;
 }
 
@@ -107,6 +109,16 @@ bool LDDE::Remove(int idx)
 	n--;
 
 	return true;
+}
+
+void LDDE::Print()
+{
+	No* current = first;
+	while (current)
+	{
+		std::cout << current->stock->getName() << " ";
+		current = current->next;
+	} std::cout << std::endl;
 }
 
 LDDE::~LDDE()

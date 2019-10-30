@@ -14,16 +14,26 @@ Hash::~Hash()
 }
 
 
-void Hash::Add(std::string key, Stock* value)
+void Hash::Add(Stock& value)
 {
+	std::string key = value.getName();
 	int idx = HashFunction(key, size);
-	hashTable[idx].Insere(value);
+	hashTable[idx].Insere(&value);
 }
 
 Stock& Hash::Get(std::string key)
 {
 	int idx = HashFunction(key, size); 
 	return hashTable[idx].Get(key);
+}
+
+void Hash::Print()
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << i << " - ";
+		hashTable[i].Print();
+	}
 }
 
 bool Hash::Contain(std::string key)
@@ -36,14 +46,6 @@ int Hash::HashFunction(std::string x, int size)
 {
 	return x.at(0) % size;
 }
-
-//void Hash::Print()
-//{
-//	for (int i = 0; i < size; i++)
-//	{
-//		hashTable[i].Print();
-//	} std::cout << std::endl;
-//}
 
 bool Hash::Remove(std::string key)
 {

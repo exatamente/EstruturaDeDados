@@ -1,4 +1,5 @@
 #include ".\..\headers\Stock.h"
+#include ".\..\headers\FilaCircular.h"
 
 /* Constructor */
 Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
@@ -9,7 +10,7 @@ Stock::Stock(Structure s, std::string _name, int _cap) : name(_name), cap(_cap)
 	{
 		case StructureQueue:
 			//std::cout << "queue" << std::endl;
-			// instanciar aqui
+			inStock = new FilaCircular(_cap);
 			break;
 		case StructureStack:
 			//std::cout << "Stack" << std::endl;
@@ -40,6 +41,23 @@ Stock::~Stock()
 	//delete inStock;
 }
 
+/* General purpose methods */
+bool Stock::Add(Product* p)
+{
+	if (inStock->InStock() > cap) return false;
+	inStock->Add(p);
+	return true;
+}
+bool Stock::Contain(unsigned int id)
+{
+	return inStock->Contain(id);
+}
+
+void Stock::Print()
+{
+	inStock->Print();
+}
+
 /* Getters */
 std::string Stock::getName()
 {
@@ -62,16 +80,6 @@ bool Stock::setPrice(float newPrice)
 	if (newPrice >= 0)
 	{
 		price = newPrice;
-		return true;
-	}
-	return false;
-}
-
-bool Stock::setQtt(int newQtt)
-{
-	if (newQtt >= 0)
-	{
-		qtt = newQtt;
 		return true;
 	}
 	return false;

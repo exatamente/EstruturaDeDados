@@ -33,6 +33,11 @@ public:
 		return this->name.compare(other.name);
 	}
 
+	/* General purpose methods */
+	bool Contain(unsigned int);
+	bool Add(Product*);
+	void Print();
+
 	/* Inherited via IStock */
 	virtual int getCap() override;
 	virtual std::string getName() override;
@@ -40,5 +45,4 @@ public:
 	virtual int getQtt() override;
 	virtual bool setCap(int) override;
 	virtual bool setPrice(float) override;
-	virtual bool setQtt(int) override;
 };
