@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iomanip>
+#include <iostream>
 #include "IStructure.h"
 #include "NoProduto.h"
 
@@ -8,6 +9,7 @@ class Stack : public IStructure
 {
 private:
 	NoProduto* topo;
+	NoProduto* inicio;
 	int n;
 
 public:

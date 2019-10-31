@@ -18,7 +18,7 @@ public:
 private:
 	int cap; // capacidade do estoque (tamanho maximo)
 	std::string name;
-	float price; // preco do estoque inteiro
+	double price; // preco do estoque inteiro
 	int qtt; // quantidade de itens em estoque
 
 	/* Methods */
@@ -36,12 +36,13 @@ public:
 	/* General purpose methods */
 	bool Contain(unsigned int);
 	bool Add(Product*);
+	Product Remove(bool&);
 	void Print();
 
 	/* Inherited via IStock */
 	virtual int getCap() override;
 	virtual std::string getName() override;
-	virtual float getPrice() override;
+	virtual double getPrice() override;
 	virtual int getQtt() override;
 	virtual bool setCap(int) override;
 	virtual bool setPrice(float) override;

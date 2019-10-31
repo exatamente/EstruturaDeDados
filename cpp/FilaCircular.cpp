@@ -37,7 +37,9 @@ void FilaCircular::Print()
 	std::cout << "<< QUEUE >> " << std::endl;
 	for (aux = i; aux != f; aux = (aux + 1) % max)
 	{
-		std::cout << v[aux]->getId() << ": " << v[aux]->getName() << "[R$" << std::setprecision(2) << v[aux]->getPrice() << "]" << std::endl;
+		std::cout.precision(2);
+		std::cout << std::fixed;
+		std::cout <<v[aux]->getName() << "(" << v[aux]->getId() << "): " << v[aux]->getName() << "[R$" << v[aux]->getPrice() << "]" << std::endl;
 	}
 	std::cout << std::endl;
 }
@@ -60,7 +62,8 @@ Product FilaCircular::Remove(bool * ok)
 		{
 			*ok = false;
 		}
-		return *v[i];
+		Product p;
+		return p;
 	}
 
 	Product temp = *v[i];

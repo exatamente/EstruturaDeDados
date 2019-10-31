@@ -14,11 +14,11 @@ Hash::~Hash()
 }
 
 
-void Hash::Add(Stock& value)
+void Hash::Add(Stock* value)
 {
-	std::string key = value.getName();
+	std::string key = value->getName();
 	int idx = HashFunction(key, size);
-	hashTable[idx].Insere(&value);
+	hashTable[idx].Insere(value);
 }
 
 Stock& Hash::Get(std::string key)

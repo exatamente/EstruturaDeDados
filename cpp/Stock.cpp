@@ -44,10 +44,24 @@ Stock::~Stock()
 /* General purpose methods */
 bool Stock::Add(Product* p)
 {
-	if (inStock->InStock() > cap) return false;
+	if (qtt >= cap) return false;
 	inStock->Add(p);
+	qtt++;
+	price += p->getPrice();
 	return true;
 }
+
+Product Stock::Remove(bool& ok)
+{
+	Product p = inStock->Remove(&ok);
+	if (ok)
+	{
+		price -= p.getPrice();
+		qtt--;
+	}
+	return p;
+}
+
 bool Stock::Contain(unsigned int id)
 {
 	return inStock->Contain(id);
@@ -64,7 +78,7 @@ std::string Stock::getName()
 	return name;
 }
 
-float Stock::getPrice()
+double Stock::getPrice()
 {
 	return price;
 }

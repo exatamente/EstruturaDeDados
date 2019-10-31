@@ -3,48 +3,64 @@
 Stack::Stack()
 {
 	topo = NULL;
+	inicio = NULL;
 	n = 0;
 }
 
 bool Stack::Add(Product * valor)
 {
 	NoProduto* novo = new NoProduto;
-	Stack* p = new Stack;
+	
+	if (!inicio) inicio = novo;
+	if (topo) topo->prox = novo;
 
 	novo->valor = valor;
 	novo->prox = NULL;
 
-	p->topo = novo;
+	topo = novo;
 
 
 	n++;
 	return true;
-	delete novo;
-	delete p;
 }
 
 int Stack::InStock()
 {
-	NoProduto* current = topo;
-	int cont = 0;
-	while (current)
-	{
-		cont++;
-		current = current->prox;
-	}
-	return cont;
+	return (n-1);
 }
 
 Product Stack::Remove(bool * ok)
 {
-	NoProduto* novo = new NoProduto;
-	Stack* p = new Stack;
-	novo->prox = NULL;
-
-	n--;
-	return *(p->topo->valor);
-	delete novo;
-	delete p;
+	NoProduto* current = inicio;
+	NoProduto* prev = NULL;
+	if (!current)
+	{
+		if (ok) *ok = false;
+		Product p;
+		return p;
+	}
+	while (current->prox)
+	{
+		prev = current;
+		current = current->prox;
+	}
+	topo = prev;
+	if (prev) prev->prox = NULL;
+	else inicio = NULL;
+	if (current)
+	{
+		if (ok) *ok = true;
+		Product valor = *(current->valor);
+		delete current;
+		n--;
+		return valor;
+	}
+	else
+	{
+		if (ok) ok = false;
+		Product p;
+		return p;
+	}
 }
 
 bool Stack::Contain(unsigned int id)
@@ -63,10 +79,13 @@ bool Stack::Contain(unsigned int id)
 
 void Stack::Print()
 {
-	NoProduto* current = topo;
+	NoProduto* current = inicio;
 	std::cout << "<< STACK >> " << std::endl;
 	while (current)
 	{
-		std::cout << current->valor->getId() << ": " << current->valor->getName() << "[R$" << std::setprecision(2) << current->valor->getPrice() << "]" << std::endl;
+		std::cout.precision(2);
+		std::cout << std::fixed;
+		std::cout << current->valor->getName() << "(" << current->valor->getId() << "): " << current->valor->getName() << "[R$" << current->valor->getPrice() << "]" << std::endl;
+		current = current->prox;
 	} std::cout << std::endl;
 }
