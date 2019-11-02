@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>732</width>
+    <height>255</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Controle de Estoque</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>732</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menuArquivo_FIX">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <widget class="QMenu" name="menuNovo">
+     <property name="title">
+      <string>Novo</string>
+     </property>
+     <addaction name="actionArmazem"/>
+     <addaction name="separator"/>
+     <addaction name="actionEstoque"/>
+     <addaction name="separator"/>
+     <addaction name="actionProduto"/>
+    </widget>
+    <addaction name="menuNovo"/>
+   </widget>
+   <addaction name="menuArquivo_FIX"/>
+  </widget>
+  <action name="actionArmazem">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/imgs/imgs/factory-stock-house.png</normaloff>:/imgs/imgs/factory-stock-house.png</iconset>
+   </property>
+   <property name="text">
+    <string>Armazem</string>
+   </property>
+  </action>
+  <action name="actionEstoque">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/imgs/imgs/boxes.png</normaloff>:/imgs/imgs/boxes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Estoque</string>
+   </property>
+  </action>
+  <action name="actionProduto">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/imgs/imgs/box.png</normaloff>:/imgs/imgs/box.png</iconset>
+   </property>
+   <property name="text">
+    <string>Produto</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

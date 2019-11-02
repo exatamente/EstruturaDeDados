@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window_NewStock</class>
+ <widget class="QDialog" name="Window_NewStock">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>340</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>340</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Adicionar Estoque</string>
+  </property>
+  <widget class="QLineEdit" name="InputNome">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>25</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>Nome dado para identificar o estoque</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="InputMin">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>131</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>Estoque mínimo, limite de 100 produtos</string>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="displayIntegerBase">
+    <number>10</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="InputArmazenagem">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>184</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pilha (LIFO) -&amp;gt; Ultimo a entrar é o primeiro a sair;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Fila (FIFO) -&amp;gt; Primeiro a entrar é o primeiro a sair;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;* A fila é implementada de forma circular *&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Pilha</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Fila</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="ButtonAdicionar">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>240</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Adicionar</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>161</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Nome do Estoque:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Capacidade Maxima:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Estoque Mínimo:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Modo de Armazenagem:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QSpinBox" name="InputMax">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>78</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>Limite máximo de 100 produtos</string>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
