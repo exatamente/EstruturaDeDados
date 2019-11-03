@@ -148,6 +148,7 @@ void MainWindow::on_ButtonRemoverProduto_clicked()
         QTreeWidgetItemIterator it(itmAux->child(0));
         if (estoqueAux->getStructure()==Stock::StructureQueue) delete itmAux->child(0);
         else delete itmAux->child(itmAux->childCount()-1);
+        itmAux->setText(1, QString::number(estoqueAux->getQtt())+"/"+QString::number(estoqueAux->getCap())  );
     }
     on_treeWidget_itemPressed(itmAux, 0);
 }
