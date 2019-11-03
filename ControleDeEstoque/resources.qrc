@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>imgs/factory-stock-house.png</file>
+        <file>imgs/box.png</file>
+        <file>imgs/boxes.png</file>
+        <file>imgs/aqua.ico</file>
+        <file>imgs/green.ico</file>
+        <file>imgs/red.ico</file>
+        <file>imgs/yellow.ico</file>
+    </qresource>
+</RCC>
