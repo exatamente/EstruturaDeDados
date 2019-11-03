@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/imgs">
-        <file>imgs/factory-stock-house.png</file>
-        <file>imgs/box.png</file>
-        <file>imgs/boxes.png</file>
-    </qresource>
-</RCC>
