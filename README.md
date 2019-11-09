@@ -3,7 +3,7 @@
 Grupo:
   - Pedro Henrique Silva Domingues R.A.: 22.218.019-2
   - Edgar Gomes R.A.: 22.118.035-9
-  - Ibrahim Jamil Orra R.A.: 22.118.193-7
+  - Ibrahim Jamil Orra R.A.: 22.118.183-7
   
 ##### O software é dividido na seguinte estrutura:
   1. Armazém
